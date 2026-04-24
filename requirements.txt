@@ -1,0 +1,5 @@
+cirq>=1.6
+numpy>=1.26
+# Optional, for the Qiskit cross-validation path (not required by these scripts)
+# qiskit>=2.3
+# qiskit-aer>=0.17
