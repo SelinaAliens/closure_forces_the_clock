@@ -1,7 +1,9 @@
-# Papers 34 · 35 · 36 — Temporary Repository
+# Closure Forces the Clock — Papers 35 & 36
 
-Companion code, data, and drafts for three consecutive papers of the Merkabit
-Research Series, forming a self-contained *closure trilogy*:
+Companion code, data, and manuscripts for the matter-antimatter sector of the
+Merkabit Research Series. Paper 34 (the upstream Ternary Spectrum result,
+already on Zenodo) is included as precursor context. Together the three
+papers form a self-contained *closure trilogy*:
 
 | # | Title | Central claim |
 |---|---|---|
