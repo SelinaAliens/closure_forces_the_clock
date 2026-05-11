@@ -165,9 +165,9 @@ Summary:
 The framework underlying these three papers spans ~30 papers; the key
 upstream dependencies are:
 
-- [`selinaserephina-star/tesseract_quantum_implementation`](https://github.com/selinaserephina-star/tesseract_quantum_implementation) — Papers 31, 32, 33 (cross-chiral tunnel primitive, Z₃ CA, primitive-complete QC)
-- [`selinaserephina-star/genesis_sequence_merkabit`](https://github.com/selinaserephina-star/genesis_sequence_merkabit) — the 16-rung forcing chain that defines the polytope ladder used by Paper 36's cascade
-- [`selinaserephina-star/three_generations`](https://github.com/selinaserephina-star/three_generations) — Paper 29 (N₃₆ × W₂₆ mass matrix), relevant to Paper 36's baryogenesis-scale discussion
+- [`SelinaAliens/tesseract_quantum_implementation`](https://github.com/SelinaAliens/tesseract_quantum_implementation) — Papers 31, 32, 33 (cross-chiral tunnel primitive, Z₃ CA, primitive-complete QC)
+- [`SelinaAliens/pentachoric_verification`](https://github.com/SelinaAliens/pentachoric_verification) — Paper 33 Pentachoric Verification Protocol (Observable 22, 19 qubits)
+- [`SelinaAliens/genesis_sequence_merkabit`](https://github.com/SelinaAliens/genesis_sequence_merkabit) — the 16-rung forcing chain that defines the polytope ladder used by Paper 36's cascade
 - Papers 9, 16 (Yang-Mills mass gap, Δ = 1/24) — see `results_registry.md` in the framework memory
 
 ---
