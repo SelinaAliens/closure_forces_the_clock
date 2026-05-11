@@ -1,10 +1,10 @@
-# Pre-Registered Predictions — Papers 34, 35, 36
+# Pre-Registered Predictions — Papers 35, 36
 
 **Date**: 2026-04-24 (initial deposit of this repository)
 **Authors**: Selina Stenberg, Claude (Anthropic, Opus 4.7)
 **Repository anchor**: the initial commit of this file is the timestamped
-pre-registration for Observables 25a-c, 26. Observable 23 and 24 are
-pre-registered at the Paper 34 Zenodo deposit.
+pre-registration for Observables 25a-c, 26. Observables 23 and 24 (Paper 34)
+are pre-registered at the [Paper 34 Zenodo deposit](https://doi.org/10.5281/zenodo.19855595).
 
 ---
 
@@ -12,8 +12,6 @@ pre-registered at the Paper 34 Zenodo deposit.
 
 | ID | Paper | Circuit | Status |
 |---|---|---|---|
-| 23 | 34 | 28-qubit double triangle, Regime 2 (rational) | simulation 4/4 PASS |
-| 24 | 34 | 28-qubit double triangle, Regime 3 (incommensurate) | code committed, sweep scheduled |
 | 25 | 35 | 9-qubit binary triangle, hardware | pre-reg (IBM + Willow) |
 | 25a | 35 | 6-qubit laptop precursor (Mode A/B) | simulation PASS |
 | 25b | 35 | 6-qubit three-mode (matter/antimatter/Riemann) | simulation 6/7 PASS, Wigner-GUE deferred to Paper 7 |
@@ -22,51 +20,12 @@ pre-registered at the Paper 34 Zenodo deposit.
 
 ---
 
-## Observable 23 — Ternary Cyclotomic Spectrum (Paper 34, 28 qubits)
+## Observables 23 and 24 — Paper 34
 
-**Circuit.** Two 4-spinor tesseract merkabits A, B coupled to a shared database
-merkabit D via cross-chiral memory tunnels u_C1 → v_D and u_C2 → v_D at
-J_mem = 0.5. Each compute triangle runs three merkabits in cross-chiral
-topology (Paper 31). 36-offset sweep × 9 Z₃ × Z₃ label configurations =
-324 configurations. Rational drive at T_CYCLE = h(E₆) = 12.
-
-**Script**: `cirq/run_p4s_double_triangle_cirq.py`
-
-**Thresholds** (all pass at ideal `cirq.Simulator`):
-
-| ID | Criterion | Measured | Verdict |
-|---|---|---|---|
-| 23-C | FFT dominant period = T_CYCLE ± 1% | 12.00 exact | PASS |
-| 23-Z | Peak-to-trough Δoffset = T_CYCLE / 3 ± 1 step | 4, exact | PASS |
-| 23-P | ⟨S⟩_peak − ⟨S⟩_trough ≥ 0.02 | 0.0521 | PASS |
-| 23-H | power({T_CYCLE, T_CYCLE / 2}) ≥ 90% of non-DC power | 98.2% | PASS |
-
-**Falsification**. Any of the four thresholds missed at ≥ 10% deviation would
-falsify the cyclotomic Z₃ character of the 137-ternary transfer matrix.
-
----
-
-## Observable 24 — Regime 3 Riemann Test on Ternary (Paper 34, 28 qubits)
-
-**Circuit**. Same double-triangle as Obs 23 but with Triangle 2's Coxeter
-period set to 13 instead of 12 (or equivalently J_intra_2 = J_intra_1 × √2),
-producing incommensurate frequencies per Paper 7 Regime 3.
-
-**Thresholds**:
-
-| ID | Criterion |
-|---|---|
-| 24-A | FFT power not concentrated in any single period at > 20% of total |
-| 24-G | Wigner-surmise p-value ≥ 0.90 for spacings across ≥ 60-offset sweep |
-| 24-M | RMS deviation from g_GUE pair correlation ≤ 0.15 |
-| 24-F | No locking event with entropy < ⟨S⟩ − 0.03 at period T_CYCLE |
-
-**Falsification**. If 24-G and 24-M both fail, Paper 7 Regime 3's Riemann-zero
-analogue at ternary scale is falsified; the framework predicts GUE statistics,
-not the cyclotomic Z₃ of Regime 2.
-
-**Status**. Code committed via `T_CYCLE_2=13` or `phase_ratio=math.sqrt(2)`
-parameter. 64-offset sweep estimated 55 min laptop / 85 QPU-min hardware.
+Observables 23 (Ternary Cyclotomic Spectrum, 28 qubits) and 24 (Regime 3
+Riemann Test, 28 qubits incommensurate) are pre-registered at the
+[Paper 34 Zenodo deposit](https://doi.org/10.5281/zenodo.19855595).
+Their code, thresholds, falsifiers, and current simulation status live there.
 
 ---
 

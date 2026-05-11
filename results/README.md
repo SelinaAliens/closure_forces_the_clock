@@ -1,17 +1,16 @@
 # Results — read me before citing
 
-JSON output of every simulation cited in Papers 34, 35, 36. For the
+JSON output of every simulation cited in Papers 35 and 36. For the
 script → paper → result mapping, see the top-level `README.md`.
+
+Paper 34's simulation outputs (the 28-qubit double-triangle Stage A/B/C
+sweeps, and the 8q Aer precursor) are not in this folder — they live with
+the [Paper 34 Zenodo deposit](https://doi.org/10.5281/zenodo.19855595).
 
 ## Quick contents
 
 | File | Paper | Notes |
 |---|---|---|
-| `p4s_double_triangle_stageA_*.json` | 34 | Stage A baseline |
-| `p4s_double_triangle_stageB_mode1_synchronous_*.json` | 34 | offset = 0 |
-| `p4s_double_triangle_stageB_mode2_interleaved_*.json` | 34 | offset = 6 |
-| `p4s_double_triangle_stageC_*.json` | 34 | **Main 324-config FFT** |
-| `obs23_p34_aer_depol_*.json` | 34 | 8q precursor proxy, Qiskit Aer, two noise levels |
 | `obs25a_binary_clock.json` | 35 | Mode A/B baseline |
 | `obs25b_closure_modes.json` | 35 | **Main closure-trichotomy result** |
 | `obs25b_rgf_filtered.json` | 35 | **Expected-fail diagnostic — see note** |

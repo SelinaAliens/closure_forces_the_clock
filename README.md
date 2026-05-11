@@ -1,35 +1,36 @@
 # Closure Forces the Clock — Papers 35 & 36
 
 Companion code, data, and manuscripts for the matter-antimatter sector of the
-Merkabit Research Series. Paper 34 (the upstream Ternary Spectrum result,
-already on Zenodo) is included as precursor context. Together the three
-papers form a self-contained *closure trilogy*:
+Merkabit Research Series:
 
 | # | Title | Central claim |
 |---|---|---|
-| **34** | The Ternary Spectrum: Cyclotomic Z₃ Structure in Coupled Merkabit Triangles | The 137 ternary sector's transfer matrix has period 12 with cyclotomic Z₃ character; FFT bichromatic in {12, 6} at 98% purity |
 | **35** | Closure Forces the Clock: Matter, Antimatter, and the Loop-Obstruction Trichotomy of B₃₁ | The merkabit's master clock is 60 = lcm(h(E₆), h(E₈)); the 5-fold ouroboros projects 60 → 12; three empirically distinguishable closure modes correspond to matter, antimatter (Paper 14 §4.3), and the Riemann zero regime (Paper 7) |
 | **36** | The Fifth Face of PSL(2,7): Matter-Antimatter Asymmetry as the Yang-Mills Mass Gap | The baryon-to-photon ratio η_B = 5α⁴/\|2T\| = 5/(24·137⁴) = 5.91×10⁻¹⁰; Paper 10's "Four Faces" extends to five |
 
-The three papers measure distinct sectors with distinct experiments but share a
-single structural backbone: the PSL(2,7) stratum decomposition
-**168 = 137 + 31** and its binary tetrahedral subgroup **2T** of order 24.
+The two papers measure and identify the matter-antimatter sector on a single
+structural backbone: the PSL(2,7) stratum decomposition **168 = 137 + 31**
+and its binary tetrahedral subgroup **2T** of order 24.
+
+The upstream **Paper 34** (Ternary Spectrum: Cyclotomic Z₃ Structure in
+Coupled Merkabit Triangles) is already published on Zenodo at
+[10.5281/zenodo.19855595](https://doi.org/10.5281/zenodo.19855595) — its
+period-12 ternary measurement is cited as upstream context in both papers
+here, but its code and data live with that deposit, not in this repo.
 
 ---
 
-## The trilogy in one paragraph
+## The pair in one paragraph
 
-Paper 34 measures the 137 ternary sector's coupling spectrum directly on 28
-qubits and finds period-12 cyclotomic Z₃ structure. Paper 35 then measures the
-31 binary sector on 6 qubits and identifies **60 = lcm(12, 30) as the
-architecture's master clock**, with the 5-fold ouroboros {S, R, T, F, P}
-collapsing 60 → 12 to produce the Paper 34 result as a sub-harmonic
-projection. Paper 35 also measures the matter-antimatter rate asymmetry on the
-binary triangle as **δ = 0.04171**, and Paper 36 identifies this as the
-**Yang-Mills mass gap Δ = 1/|2T| = 1/24** already established in Papers 9 and
-16. Combining the CP phase (1/24), four electromagnetic suppression factors
-(α⁴), and the five-fold ouroboros amplification, the baryon asymmetry admits a
-closed form
+Paper 35 measures the 31 binary sector on 6 qubits and identifies
+**60 = lcm(12, 30) as the architecture's master clock**, with the 5-fold
+ouroboros {S, R, T, F, P} collapsing 60 → 12 to recover Paper 34's period-12
+ternary result as a sub-harmonic projection. Paper 35 also measures the
+matter-antimatter rate asymmetry on the binary triangle as
+**δ_rate = 0.0417**, and Paper 36 identifies this as the **Yang-Mills mass
+gap Δ = 1/|2T| = 1/24** already established in Papers 9 and 16. Combining
+the CP phase (1/24), four electromagnetic suppression factors (α⁴), and the
+five-fold ouroboros amplification, the baryon asymmetry admits a closed form
 
 > **η_B = 5/(24·137⁴) = 5.907 × 10⁻¹⁰** vs observed **6.09 × 10⁻¹⁰** (Planck 2018).
 
@@ -42,10 +43,10 @@ double cover.
 ## Contents
 
 ```
-cirq/          — simulation scripts (Cirq + NumPy)
+cirq/          — simulation scripts (Cirq + NumPy) for Papers 35 and 36
 results/       — raw JSON output of every run cited in the papers
-paper/         — markdown drafts and the Paper 34 docx
-PREDICTION.md  — pre-registered observables (22, 23, 24, 25, 25a-c, 26)
+paper/         — Paper 35 and Paper 36 manuscript docx files
+PREDICTION.md  — pre-registered observables (25, 25a-c, 26)
 requirements.txt
 ```
 
@@ -53,7 +54,6 @@ requirements.txt
 
 | Script | Paper | Observable(s) | Purpose |
 |---|---|---|---|
-| `cirq/run_p4s_double_triangle_cirq.py` | 34 | Obs 23, Obs 24 | 28-qubit double-triangle sweep (Stages A, B, C) — the ternary cyclotomic Z₃ spectrum and the Regime 3 Riemann-zero forecast |
 | `cirq/run_obs25a_binary_clock_cirq.py` | 35 | Obs 25a | Single-mode baseline — period-30 test, two drive modes (rational vs log-primes) |
 | `cirq/run_obs25b_closure_modes_cirq.py` | 35 | Obs 25b | Three closure modes — matter, antimatter, Riemann — on the 6-qubit binary triangle |
 | `cirq/run_obs25b_rgf_filtered_analysis.py` | 35 | Obs 25b-RGF | High-pass-filtered Wigner-GUE diagnostic on the Riemann mode |
@@ -88,13 +88,9 @@ cutoffs, not a falsification of the Riemann-regime claim.
 
 | JSON | Paper | Source script | Notes |
 |---|---|---|---|
-| `p4s_double_triangle_stageA_*.json` | 34 | double_triangle | Stage A baseline |
-| `p4s_double_triangle_stageB_mode1_synchronous_*.json` | 34 | double_triangle | offset = 0 dominance matrix |
-| `p4s_double_triangle_stageB_mode2_interleaved_*.json` | 34 | double_triangle | offset = 6 dominance matrix |
-| `p4s_double_triangle_stageC_*.json` | 34 | double_triangle | **Main result** — 324-configuration entropy spectrum, FFT period 12 |
 | `obs25a_binary_clock.json` | 35 | obs25a | Mode A vs Mode B FFT on 6 qubits |
 | `obs25b_closure_modes.json` | 35 | obs25b | Three-mode entropy curves + all 7 threshold verdicts |
-| `obs25b_rgf_filtered.json` | 35 | rgf_filtered | 9 high-pass cutoffs, KS test — **expected-fail diagnostic** (see note below) |
+| `obs25b_rgf_filtered.json` | 35 | rgf_filtered | 9 high-pass cutoffs, KS test — **expected-fail diagnostic** (see note above) |
 | `obs25b_riemann_long.json` | 35 | riemann_long | 960-sample extended sweep, multi-ensemble |
 | `obs25c_chirality_cascade.json` | 36 | cascade | 5-rung δ measurements + exponential fit |
 
@@ -124,9 +120,7 @@ Every integer is architectural:
 Python 3.13, Cirq ≥ 1.6, NumPy ≥ 1.26. See `requirements.txt`.
 
 ```bash
-# Paper 34 — ternary cyclotomic spectrum (28 qubits, ~3 hours)
 cd cirq/
-python run_p4s_double_triangle_cirq.py
 
 # Paper 35 — binary closure modes (6 qubits, ~6 seconds)
 python run_obs25a_binary_clock_cirq.py        # basic Mode A/B
@@ -138,6 +132,11 @@ python run_obs25b_riemann_long_cirq.py        # extended 960-offset Riemann swee
 python run_obs25c_chirality_cascade_cirq.py            # rungs 1-5
 python run_obs25c_chirality_cascade_cirq.py --heavy    # optional rung 6, ~15 hours
 ```
+
+Paper 34's 28-qubit double-triangle measurement (the upstream period-12
+ternary result) is reproducible from its own Zenodo deposit at
+[10.5281/zenodo.19855595](https://doi.org/10.5281/zenodo.19855595), not from
+this repo.
 
 Rung 6 (24-cell) is proved theoretically in Paper 36 §6 (Theorem 1) via the
 orbit-stabilizer argument on 2T unit quaternions. The `--heavy` flag is
@@ -151,9 +150,8 @@ available but unnecessary — the hardware pre-registration is Observable 26
 See `PREDICTION.md` for thresholds, falsifiers, and hardware budgets.
 Summary:
 
-- **Obs 22** (Paper 33, predecessor): Pentachoric Verification Protocol, 19 qubits
-- **Obs 23** (Paper 34): Cyclotomic Z₃ spectrum, 28 qubits — simulation PASS on all four thresholds
-- **Obs 24** (Paper 34): Regime 3 incommensurate 137 × 137 coupling — Riemann-zero forecast, forthcoming
+- **Obs 22** (Paper 33, predecessor): Pentachoric Verification Protocol, 19 qubits — see [`SelinaAliens/pentachoric_verification`](https://github.com/SelinaAliens/pentachoric_verification)
+- **Obs 23, 24** (Paper 34): Cyclotomic Z₃ spectrum + Regime 3 — pre-registered at the [Paper 34 Zenodo deposit](https://doi.org/10.5281/zenodo.19855595)
 - **Obs 25** (Paper 35): Three-mode closure trichotomy on 9 qubits, IBM + Willow cross-arch
 - **Obs 25a–c** (Papers 35/36): laptop precursors to 25 + cascade
 - **Obs 26** (Paper 36): 24-qubit chirality asymmetry on 24-cell, Willow or IBM Heron r2
