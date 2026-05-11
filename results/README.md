@@ -59,5 +59,5 @@ exact values in `obs25b_closure_modes.json`:
 Computing δ_rate from the exact values gives **0.041683**, not 0.04171.
 Both forms agree with Δ(YM) = 1/24 = 0.041̅6 to four significant figures;
 the 3 × 10⁻⁵ shift between them is rounding of the displayed purities,
-not of the underlying simulation. Paper 36 v8 carries an inline footnote
+not of the underlying simulation. Paper 36 v9 carries an inline footnote
 to this effect after the computation in §3.1.
