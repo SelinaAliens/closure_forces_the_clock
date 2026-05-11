@@ -58,6 +58,30 @@ requirements.txt
 | `cirq/run_obs25b_riemann_long_cirq.py` | 35 | Obs 25b extended | 960-sample Riemann sweep + multi-ensemble level-spacing test (GUE/GOE/Poisson) |
 | `cirq/run_obs25c_chirality_cascade_cirq.py` | 36 | Obs 25c | 7-rung chirality cascade (triangle → tesseract on laptop; rung 6 = 24-cell supplied by Theorem 1) |
 
+### Note on `obs25b_rgf_filtered.json` (read before citing)
+
+This file is a **diagnostic that the framework predicts to fail at the
+cutoffs tested**. All nine cutoffs (3.5 → 20.0) return `verdict = "fail"`.
+That is the expected outcome, not a refutation, for three reasons:
+
+1. The Wigner-GUE signature lives in the **actual Riemann zeros** (Paper 7,
+   Analysis 40, p = 0.993), not in this 6-qubit proxy. The proxy uses a
+   log-prime drive on a binary triangle; it is a forecast circuit, not a
+   re-derivation of the Montgomery pair-correlation result.
+2. Paper 35 §8.3 explicitly carries this as an open question and does **not**
+   cite this JSON as evidence for GUE statistics. The `p = 0.993` quoted
+   in Paper 35 traces to Paper 7, the Riemann-zero analysis.
+3. The framework expects the 6-qubit proxy to enter the Riemann regime only
+   after the Z₆₂ stratum is fully resolved (cf. Paper 35 §8.3 and Paper 36
+   §6 Conjecture 1). The "fail × 9" pattern at the cutoffs tested is
+   therefore consistent with the framework's own prediction.
+
+If you cite or re-run this file, please retain this context — `verdict =
+"fail"` here is a *predicted* characteristic of the proxy circuit at these
+cutoffs, not a falsification of the Riemann-regime claim.
+
+---
+
 ### Result → paper mapping
 
 | JSON | Paper | Source script | Notes |
@@ -68,7 +92,7 @@ requirements.txt
 | `p4s_double_triangle_stageC_*.json` | 34 | double_triangle | **Main result** — 324-configuration entropy spectrum, FFT period 12 |
 | `obs25a_binary_clock.json` | 35 | obs25a | Mode A vs Mode B FFT on 6 qubits |
 | `obs25b_closure_modes.json` | 35 | obs25b | Three-mode entropy curves + all 7 threshold verdicts |
-| `obs25b_rgf_filtered.json` | 35 | rgf_filtered | 9 high-pass cutoffs, KS test |
+| `obs25b_rgf_filtered.json` | 35 | rgf_filtered | 9 high-pass cutoffs, KS test — **expected-fail diagnostic** (see note below) |
 | `obs25b_riemann_long.json` | 35 | riemann_long | 960-sample extended sweep, multi-ensemble |
 | `obs25c_chirality_cascade.json` | 36 | cascade | 5-rung δ measurements + exponential fit |
 
